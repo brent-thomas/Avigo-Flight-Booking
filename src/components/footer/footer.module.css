@@ -1,0 +1,15 @@
+.container {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff;
+    border-top: solid 1px #24A0ED;
+}
+
+.logo {
+    height: 25px;
+    display: block;
+}

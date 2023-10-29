@@ -1,0 +1,67 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+.bg-light-gray {
+  background-color: #f5f5f7;
+}
+
+.pd-vt {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+/*///////////////////////////
+/////Horizontal Padding/////////////////
+////////////////////////*/
+
+.pd-hz {
+    padding-left: 1rem; /* 16px */
+    padding-right: 1rem; /* 16px */
+  }
+
+.ht-100 {
+    height: 105vh;
+}
+  
+  /* For larger phones or tablets in portrait mode */
+  @media (min-width: 480px) {
+    .pd-hz {
+      padding-left: 2rem; /* 32px */
+      padding-right: 2rem; /* 32px */
+    }
+  }
+  
+  /* For tablets in landscape mode or small desktops */
+  @media (min-width: 768px) {
+    .pd-hz {
+      padding-left: 4rem; /* 64px */
+      padding-right: 4rem; /* 64px */
+    }
+  }
+  
+  /* For regular desktops */
+  @media (min-width: 1024px) {
+    .pd-hz {
+      padding-left: 8rem; /* 128px */
+      padding-right: 8rem; /* 128px */
+    }
+  }
+  
+  /* For large desktops or screens */
+  @media (min-width: 1280px) {
+    .pd-hz {
+      padding-left: 15rem; /* 192px */
+      padding-right: 15rem; /* 192px */
+    }
+  }
+  
+  
+  @media (min-width: 1920px) {
+    .pd-hz {
+      padding-left: 25rem; /* 256px */
+      padding-right: 25rem; /* 256px */
+    }
+  }

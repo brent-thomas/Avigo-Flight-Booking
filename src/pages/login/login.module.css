@@ -1,0 +1,88 @@
+.body {
+  margin: 0;
+  padding: 0;
+  background-color: #dde2e8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative;
+}
+.boxheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerContent {
+  font-size: 1em;
+  margin-right: 3em;
+  margin-left: 20px;
+  margin-top: 0px;
+}
+
+.logobrand img {
+  padding-top: 20px;
+  width: 150px;
+}
+/* Style the white login box */
+.whiteBox {
+  background-color: #fff; /* White box */
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 25em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+}
+
+.loginButton {
+  align-items: center;
+  text-align: center;
+}
+/* Center the button within the white box */
+.whiteBox button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px 0px;
+}
+
+/* Style the login form elements within the white box */
+.inputBox {
+  margin: 5px 0;
+  padding: 10px;
+  width: 100%;
+}
+
+.whiteBox h3 {
+  font-size: 1em;
+}
+
+.usernameInput p {
+  font-size: 13px;
+}
+.passwordInput p {
+  font-size: 13px;
+}
+.placeholder {
+  width: 60%;
+  margin: 30px;
+}
+.createAccountLink {
+  color: #007bff;
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
