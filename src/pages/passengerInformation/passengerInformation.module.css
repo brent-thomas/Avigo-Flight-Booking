@@ -1,0 +1,184 @@
+/* Apply styles to the Passenger Info page */
+
+/* Styles for the entire page */
+.page {
+    background-color: #dde2e8;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .pageContent {
+    width: 800px;
+    margin: 0 auto;
+  }
+
+  /* Back Button Style */
+  .backButton {
+    border: none;
+    background: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    align-self: flex-start; /* Position at the top-left */
+  }
+
+  .backButtonImg {
+    height: 60px;
+    display: block;
+}
+
+.head2 {
+  font-size: .9em;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+  
+  /* White Container Style */
+  .container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    width: 80%; /* Adjust the width as needed */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Airline Name Style */
+  .airlineName {
+    font-weight: 600;
+    font-size: 1em;
+    text-align: left;
+  }
+  
+  /* Blue Box Style */
+  .blueBox {
+    background-color: #2196f3;
+    color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Info Text Style */
+  .infoText {
+    font-weight: 600;
+    margin: 20px 0;
+  }
+
+  /* Input Container Style */
+  .inputContainer {
+    padding: 0 20px;
+  }
+
+  .infoHeading1 {
+    font-size: .8em;
+  }
+
+  .infoHeading2 {
+    font-size: .8em;
+    margin-top: 40px;
+  }
+  
+  /* Passenger Section Style */
+  .passengerForm {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+    text-align: left;
+  }
+
+  .passengerName {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .passengerIdDOB {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .expiryCcvInputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .billingInputs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  .input50 {
+    margin: 5px 0;
+    padding: 10px;
+    flex: 1;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.37); 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .input67 {
+    flex: 2;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.37); 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .input33 {
+    margin: 5px 0;
+    padding: 10px;
+    padding-left: 10px;
+    flex: 1;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.37); 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .input100 {
+    margin: 5px 0;
+    padding: 10px;
+    flex: 1;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.37); 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .selectState {
+    margin: 5px 0;
+    padding: 10px;
+    flex: 1;
+    border-radius: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.37); 
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Submit Button Style */
+  .submitButton {
+    align-self: center;
+    background-color: #2196f3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 10px;
+    width: 80px;
+    cursor: pointer;
+    margin: 20px 0;
+    text-decoration: none; /* Remove underline */
+    font-size: 1em;
+  }
+  
+  

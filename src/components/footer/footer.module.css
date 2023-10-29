@@ -9,7 +9,22 @@
     border-top: solid 1px #24A0ED;
 }
 
+.container h3 {
+    margin-top: 3em;
+}
+
 .logo {
     height: 25px;
     display: block;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex a {
+    display: block;
+    margin: 5px;
+    text-decoration: none;
+    color: blue;
 }

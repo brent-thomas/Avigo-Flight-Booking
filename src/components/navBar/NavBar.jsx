@@ -10,7 +10,7 @@ const NavBar = () => {
   console.log(state)
   return (
     <div className={`${styles.container} pd-hz`}>
-        <Link href="/">
+        <Link to="/">
           <img alt='AVIOGO LOGO' src={logo} className={styles.logo}/>
         </Link>
         
