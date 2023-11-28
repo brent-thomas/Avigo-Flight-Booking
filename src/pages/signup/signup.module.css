@@ -42,7 +42,7 @@
   align-items: center; /* Center horizontally */
 }
 
-.loginButton {
+.signupButton {
   align-items: center;
   text-align: center;
 }
@@ -67,10 +67,10 @@
 .whiteBox h3 {
   font-size: 1em;
 }
-
 .emailInput label {
   font-size: 13px;
 }
+
 .passwordInput label {
   font-size: 13px;
 }
@@ -78,7 +78,8 @@
   width: 60%;
   margin: 30px;
 }
-.createAccountLink {
+
+.backToSigninLink {
   color: #007bff;
   text-decoration: none;
   cursor: pointer;
@@ -87,7 +88,7 @@
   align-items: center;
   margin-bottom: 10px;
 }
-.errorMessage {
+.successMessage {
   text-align: center;
   color: rgb(159, 1, 1);
   font-size: small;
