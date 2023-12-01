@@ -4,24 +4,53 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import UserPool from "../UserPool";
 import logo from "../../assets/aviogo_logo.png";
+import { CognitoUser, AuthenticationDetails } from "amazon-cognito-identity-js";
 
 const Signup = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
+  const [verificationRequired, setVerificationRequired] = useState(false);
+  const [confirmationCode, setConfirmationCode] = useState("");
 
   const onSubmit = (event) => {
     event.preventDefault();
+    if (verificationRequired) {
+      verifyAccount();
+    } else {
+      UserPool.signUp(email, password, [], null, (err, data) => {
+        if (err) {
+          console.error(err);
+        } else {
+          console.log(data);
+          setSuccessMessage(
+            "Created account successfully. Please check your email for a verification code."
+          );
+          setVerificationRequired(true);
+        }
+      });
+    }
+  };
 
-    UserPool.signUp(email, password, [], null, (err, data) => {
+  const verifyAccount = () => {
+    // Create a new CognitoUser instance
+    const user = new CognitoUser({
+      Username: email,
+      Pool: UserPool,
+    });
+
+    // Confirm the registration using the confirmRegistration method
+    user.confirmRegistration(confirmationCode, true, (err, data) => {
       if (err) {
         console.error(err);
+      } else {
+        console.log(data);
+        setSuccessMessage("Account verified successfully.");
+
+        // Redirect to the /dashboard route after successful verification
+        navigate("/dashboard");
       }
-      console.log(data);
-      setSuccessMessage(
-        "Created account successfully. Please verify your email"
-      );
     });
   };
 
@@ -64,8 +93,21 @@ const Signup = () => {
               required
             />
           </div>
+          {verificationRequired && (
+            <div className={styles.confirmationCodeInput}>
+              <label htmlFor="confirmationCode">Confirmation Code</label>
+              <input
+                className={styles.inputBox}
+                value={confirmationCode}
+                onChange={(event) => setConfirmationCode(event.target.value)}
+                required
+              />
+            </div>
+          )}
           <div className={styles.signupButton}>
-            <button type="submit">Sign up</button>
+            <button type="submit">
+              {verificationRequired ? "Verify" : "Sign up"}
+            </button>
           </div>
 
           <a onClick={handleBackToSignin} className={styles.backToSigninLink}>
