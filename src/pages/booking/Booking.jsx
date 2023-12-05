@@ -135,7 +135,7 @@ const Booking = () => {
               <img src={delta_logo} className={styles.logo}></img>
               <p className={styles.airline}>Delta Airlines</p>
 
-              <p className={styles.departArrive}>Departure: {(departureF.Date).substring(0,11)} </p>
+              <p className={styles.departArrive}>Departure: {(departureF.Date)} </p>
               <div className = {styles.wrapper}>
                 <br/>
               
@@ -162,7 +162,7 @@ const Booking = () => {
 
               <br/>
               <br/>
-              <p className={styles.departArrive}>Return: {(arrivalF.Date).substring(0,11)}</p>
+              <p className={styles.departArrive}>Return: {(arrivalF.Date)}</p>
               <div className = {styles.wrapper}>
                 <br/>
                 <div>
