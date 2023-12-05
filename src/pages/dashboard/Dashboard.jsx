@@ -3,15 +3,21 @@ import axios from 'axios';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import styles from './dashboard.module.css';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+
 
 export default function Home() {
+  
   const navigate = useNavigate();
   const [departureAirports, setDepartureAirports] = useState([]);
   const [arrivalAirports, setArrivalAirports] = useState([]);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  //
+  const [departure, setDeparture] = useState(null);
+  const [arrival, setArrival] = useState(null);
 
+  
   useEffect(() => {
     const fetchAirports = async () => {
       try {
@@ -34,7 +40,16 @@ export default function Home() {
   const handleSearch = () => {
     console.log('Selected Departure Date:', startDate);
     console.log('Selected Return Date:', endDate);
-    navigate('/booking');
+    console.log('Selected Departure Airport', departure)
+    console.log('Selected Arrival Airport', arrival)
+  };
+
+  const handleDepart = (e) => {
+    setDeparture (e.target.value);
+  };
+
+  const handleArrive = (e) => {
+    setArrival (e.target.value);
   };
 
   return (
@@ -44,7 +59,7 @@ export default function Home() {
       <div className={styles.searchContainer}>
         <div>
           <label>Departure Airport</label>
-          <select defaultValue={'Select Airport'}>
+          <select defaultValue={'Select Airport'} onChange={handleDepart}>
             <option value="Select Airport" hidden disabled>
               Select Airport
             </option>
@@ -58,8 +73,8 @@ export default function Home() {
 
         <div>
           <label>Arrival Airport</label>
-          <select defaultValue={'Select Airport'}>
-            <option value="Select Airport" hidden disabled>
+          <select defaultValue={'Select Airport'} onChange={handleArrive}>
+            <option value="Select Airport" hidden disabled >
               Select Airport
             </option>
             {arrivalAirports.map((airport, index) => (
@@ -91,9 +106,24 @@ export default function Home() {
         </div>
 
         <div>
-        <button className={styles.searchButton} type="button" onClick={() => handleSearch()}>
-          Search
-        </button>
+          <Link 
+            to = {'/booking'}
+            state={
+              {
+                dep: departure,
+                arr: arrival,
+                dateGo: startDate,
+                dateReturn: endDate
+              }
+            }
+
+            >
+            
+            <button className={styles.searchButton} type="button">
+              Search
+            </button>
+          </Link>
+        
         </div>
 
       </div>
