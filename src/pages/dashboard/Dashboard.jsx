@@ -11,6 +11,8 @@ export default function Home() {
   const [arrivalAirports, setArrivalAirports] = useState([]);
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
+  const [departureAirport, setDepartureAirport] = useState('');
+  const [arrivalAirport, setArrivalAirport] = useState('');
 
   useEffect(() => {
     const fetchAirports = async () => {
@@ -32,6 +34,11 @@ export default function Home() {
   }, []);
 
   const handleSearch = () => {
+    if (!departureAirport || !arrivalAirport || !startDate || !endDate) {
+      alert('Please fill out all information.'); // Show an alert for missing fields
+      return;
+    }
+
     console.log('Selected Departure Date:', startDate);
     console.log('Selected Return Date:', endDate);
     navigate('/booking');
@@ -44,8 +51,8 @@ export default function Home() {
       <div className={styles.searchContainer}>
         <div>
           <label>Departure Airport</label>
-          <select defaultValue={'Select Airport'}>
-            <option value="Select Airport" hidden disabled>
+          <select value={departureAirport} onChange={(e) => setDepartureAirport(e.target.value)}>
+            <option value="" hidden disabled>
               Select Airport
             </option>
             {departureAirports.map((airport, index) => (
@@ -57,9 +64,9 @@ export default function Home() {
         </div>
 
         <div>
-          <label>Arrival Airport</label>
-          <select defaultValue={'Select Airport'}>
-            <option value="Select Airport" hidden disabled>
+        <label>Arrival Airport</label>
+          <select value={arrivalAirport} onChange={(e) => setArrivalAirport(e.target.value)}>
+            <option value="" hidden disabled>
               Select Airport
             </option>
             {arrivalAirports.map((airport, index) => (
@@ -92,8 +99,8 @@ export default function Home() {
 
         <div>
         <button className={styles.searchButton} type="button" onClick={() => handleSearch()}>
-          Search
-        </button>
+            Search
+          </button>
         </div>
 
       </div>

@@ -45,6 +45,21 @@
     display: flex;
     flex-direction: column;
   }
+
+  .airline_container{
+    min-width: 100%;
+    display: flex;
+  }
+  .logo{
+    width: 28px;
+    height: 28px;
+    margin-left: 20px;
+  }
+
+  .airline{
+    font-size: 22px;
+    display: inline;
+  }
   
   /* Airline Name Style */
   .airlineName {
